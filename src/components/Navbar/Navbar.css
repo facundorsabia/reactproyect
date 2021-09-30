@@ -1,0 +1,25 @@
+
+.navbar-collapse{
+    margin-left: 300px;
+}
+
+.navbar-brand{
+    font-size: 1.5rem !important;
+}
+
+.nav-link{
+    color: white !important;
+    font-size: 1.2rem;
+    margin-right: 1.8rem;
+}
+
+.nav-link:hover{
+    color: rgb(206, 206, 206) !important;
+    border-top: .15em solid #ff3a2e;
+}
+
+@media screen and (min-width: 1200px){
+    .navbar {
+        height: 5rem;
+    }
+}

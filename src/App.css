@@ -1,0 +1,17 @@
+
+.App{
+    height: 100vh;
+}
+
+.wrapper{
+    background-image: url(../src/musicProduction.jpeg);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: #464646;
+}
