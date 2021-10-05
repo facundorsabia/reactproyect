@@ -1,5 +1,13 @@
+
 h1{
     color: white;
     text-align: center;
-    transform: translateY(35rem);
+    text-transform: uppercase;
+    margin: 2rem 5rem 2rem 5rem;
+}
+
+.itemContainer{
+    width: 50%;
+    display: inline-block;
+    text-align: center;
 }
