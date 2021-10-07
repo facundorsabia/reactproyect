@@ -6,7 +6,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App wrapper">
       <div className="wrapper">
       <Navbar />
       <ItemListContainer tittle={'Cursos de producción musical'} />

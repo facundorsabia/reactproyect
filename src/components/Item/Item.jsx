@@ -3,7 +3,7 @@ import ItemCount from './ItemCount.jsx';
 
 import './Item.css';
 
-const Item = ({ name, image, price, stock }) => {
+const Item = ({ name, thumbnail, price, id, stock  }) => {
 
   const onAdd = (qty) => {
     alert(`Felicitaciones has comprado ${qty} cursos de ${name}`);
@@ -11,7 +11,7 @@ const Item = ({ name, image, price, stock }) => {
 
   return (
     <article className="product-card">
-      <img className="product-card__image" src={image} alt="" />
+      <img className="product-card__image" src={thumbnail} alt="cursos de produccion musical" />
 
       <h3 className="product-card__name">{name}</h3>
       <span className="product-card__name">${price}</span>
