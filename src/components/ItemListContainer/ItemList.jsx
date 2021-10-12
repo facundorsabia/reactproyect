@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Item from '../Item/Item';
-import { productList } from '../../datos/datos';
+import { getAllProductsFromDB } from '../../helpers/getData';
 
 import './ItemList.css';
 
@@ -8,25 +8,9 @@ const ItemList = () => {
 
   const [products, setProducts] = useState([]);
 
-  const getProducts = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(productList);
-    }, 2000);
-  });
-
-  
-  const getProductsFromDB = async () => {
-    try {
-      const result = await getProducts;
-      setProducts(result);
-    } catch (error) {
-      alert('No podemos mostrar los productos en este momento');
-    }
-  };
-
 
   useEffect(() => {
-    getProductsFromDB();
+    getAllProductsFromDB(setProducts);
   }, []);
 
   return (
