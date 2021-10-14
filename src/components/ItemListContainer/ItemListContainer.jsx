@@ -3,11 +3,10 @@ import './ItemListContainer.css'
 import ItemList from './ItemList'
 
 
-const itemListContainer = ({tittle}) => {
+const itemListContainer = () => {
 
     return(
-        <section>
-         <h1>{tittle}</h1>
+        <section class="cursos cursosSlide">
             <ItemList />
          </section>
     );

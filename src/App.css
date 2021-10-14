@@ -1,29 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
 
-.App{
-    height: auto;
-}
 
-.wrapper{
-    background-image: url(../src/images/musicProduction.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-color: #464646;
-    height: 350vh;
-}
-
-@media only screen and (max-width: 1024px) {
-    .wrapper{
-        height: 600vh;
-    }
-}
-
-
-
-/*TEXT GENERAL*/
+/*GENERAL Styles*/
 
 h1{
     font-family: 'Rajdhani', sans-serif;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+}
+
+.link:hover{
+    text-decoration: none;
+    color: rgb(230, 230, 230);
+}
+
+.linkDrop{
+    text-decoration: none;
+    color: black;
+}
+
+.linkDrop:hover{
+    text-decoration: none;
+    color: rgb(32, 32, 32);
 }

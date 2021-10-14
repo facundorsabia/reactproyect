@@ -1,9 +1,11 @@
 import React from 'react';
 import ItemCount from '../Item/ItemCount';
 
+
 import './ItemDetail.css';
 
 const ItemDetail = ({ item }) => {
+
 
   const onAdd = (qty) => {
     alert(`Felicitaciones has comprado ${qty} cursos de ${item.name}`);

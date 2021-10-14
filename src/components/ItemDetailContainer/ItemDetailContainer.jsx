@@ -4,13 +4,16 @@ import { getProductById } from '../../helpers/getData.js';
 import ItemDetail from '../ItemDetail/ItemDetail.jsx';
 import './ItemDetailContainer.css';
 
+
 const ItemDetailContainer = ({ id }) => {
+
   const [product, setProduct] = useState(null);
 
+
   useEffect(() => {
-    getProductById(id, setProduct);
+    getProductById(parseInt(id), setProduct);
     console.log(product);
-  }, []);
+  }, [id]);
 
   return (
     <section>
