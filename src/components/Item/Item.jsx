@@ -1,7 +1,7 @@
 import React from 'react';
 import ItemCount from './ItemCount.jsx';
 import Button from 'react-bootstrap/Button';
-import {NavLink, useParams} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import './Item.css';
 
 const Item = ({ name, thumbnail, price, id, stock  }) => {
