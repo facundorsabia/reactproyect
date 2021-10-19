@@ -1,3 +1,8 @@
+This proyect is being developed by Facundo Rodriguez Sabia for Coderhouse ReactJS course. 
+It´s an ecommerce with shopping cart.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
