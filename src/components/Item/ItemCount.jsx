@@ -4,7 +4,7 @@ import { useState } from 'react';
 import './ItemCount.css';
 
 const ItemCount = ({ initial, stock, onAdd }) => {
-  //hook de estado
+
   const [qty, setQty] = useState(initial);
 
   const addProduct = (num) => {
@@ -39,6 +39,8 @@ const ItemCount = ({ initial, stock, onAdd }) => {
        <span>Añadir</span>
       </button>
     </div>
+  
+
   );
 };
 

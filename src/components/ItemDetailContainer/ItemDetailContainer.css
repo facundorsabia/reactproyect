@@ -1,3 +1,14 @@
+.itemContainer{
+    width: 100%;
+    height: auto;
+    background-position: 67%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .itemContainerSlide {
+    background-image: url(../../images/musicProduction.jpeg);
+  }
+
 .product-detail__info{
     color: white;
     margin: 2px;

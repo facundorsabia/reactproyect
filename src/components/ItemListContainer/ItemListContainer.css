@@ -14,7 +14,7 @@ h1{
 
 .cursos {
     width: 100%;
-    height: 210vh;
+    height: auto;
     background-position: 67%;
     background-size: cover;
     background-repeat: no-repeat;

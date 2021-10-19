@@ -16,7 +16,7 @@ const ItemDetailContainer = ({ id }) => {
   }, [id]);
 
   return (
-    <section>
+    <section className="itemContainer itemContainerSlide">
       {product ? <ItemDetail item={product} /> : <p>Obteniendo producto...</p>}
     </section>
   );
