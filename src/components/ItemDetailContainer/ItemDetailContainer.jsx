@@ -12,7 +12,7 @@ const ItemDetailContainer = ({ id }) => {
 
   useEffect(() => {
     getProductById(parseInt(id), setProduct);
-    console.log(product);
+
   }, [id]);
 
   return (

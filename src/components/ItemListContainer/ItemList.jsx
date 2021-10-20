@@ -38,7 +38,7 @@ const ItemList = () => {
             }
           </>
         ) : (
-          <p class="loading">LOADING</p>
+          <p className="loading">LOADING</p>
         ) //Si products.length es "0" se interpreta como falso y por lo tanto se imprimirá "cargando productos"
       }
     </div>

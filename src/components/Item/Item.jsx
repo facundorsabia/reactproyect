@@ -1,15 +1,10 @@
 import React from 'react';
-import ItemCount from './ItemCount.jsx';
 import Button from 'react-bootstrap/Button';
 import {NavLink} from 'react-router-dom';
 import './Item.css';
 
 const Item = ({ name, thumbnail, price, id, stock  }) => {
 
-
-  const onAdd = (qty) => {
-    alert(`Felicitaciones has comprado ${qty} cursos de ${name}`);
-  };
 
   return (
     <article className="product-card">

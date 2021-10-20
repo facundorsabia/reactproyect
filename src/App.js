@@ -9,10 +9,13 @@ import Blog from './components/Blog/Blog';
 import Footer from './components/Footer/Footer';
 import Contact from './components/Contact/Contact';
 import Cursos from './components/Cursos/Cursos';
+import CartContextProvider from './Context/cartContext';
+import Cart from './components/Cart/Cart';
 
 function App() {
 
   return (
+  <CartContextProvider>
     <BrowserRouter>
         <Navbar/>
           <Switch>
@@ -31,9 +34,13 @@ function App() {
             <Route exact path="/contacto">
               <Contact/>
             </Route>
+            <Route exact path="/cart">
+              <Cart/>
+            </Route>
           </Switch>
         <Footer/>
     </BrowserRouter>
+    </CartContextProvider>
   );
 }
 

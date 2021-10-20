@@ -1,17 +1,22 @@
 import React, {useState} from 'react';
 import ItemCount from '../Item/ItemCount';
 import {Link} from 'react-router-dom';
-
 import './ItemDetail.css';
+import { useCartContext } from '../../Context/cartContext';
+
 
 const ItemDetail = ({ item }) => {
 
+  const {cartList, addItem} = useCartContext();
+  console.log(cartList);
+
   const [show, setShow] = useState (false);
 
-  const [hide, setHide] = useState (true)
+  const [hide, setHide] = useState (true);
 
   const onAdd = (qty) => {
-    alert(`Felicitaciones has comprado ${qty} cursos de ${item.name}`);
+    addItem({item: item, cantidad: qty});
+    alert(`Has agreegado al carrito ${qty} cursos de ${item.name}`);
     setShow(true);
     setHide(false);
   };
@@ -27,7 +32,7 @@ const ItemDetail = ({ item }) => {
             <li>Herramientas tecnológicas: {item.tools}</li>
           </ul>
           {
-          hide? <ItemCount stock={item.stock} onAdd={onAdd} initial={1}/>:null
+          hide ? <ItemCount stock={item.stock} onAdd={onAdd} initial={1}/>:null
           }
           
           {

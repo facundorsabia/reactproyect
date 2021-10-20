@@ -13,8 +13,8 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div class="container copyright">
-                <p>&copy; <a href="#">technomaster.com.ar</a> All Right Reserved | Designed By Facundo Rodriguez Sabia</p>
+            <div className="container copyright">
+                <p>&copy;technomaster.com.ar All Right Reserved | Designed By Facundo Rodriguez Sabia</p>
             </div>
         </div>
     </div>

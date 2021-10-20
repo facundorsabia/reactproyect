@@ -6,7 +6,7 @@ import ItemList from './ItemList'
 const itemListContainer = () => {
 
     return(
-        <section class="cursos cursosSlide">
+        <section className="cursos cursosSlide">
             <ItemList />
          </section>
     );

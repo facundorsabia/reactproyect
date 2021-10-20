@@ -1,0 +1,16 @@
+.cart{
+    width: 100%;
+    height: 100vh;
+    background-position: 67%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .cartSlide {
+    background-image: url(../../images/musicProduction.jpeg);
+  }
+
+  .productCart{
+      color: white;
+      margin: 4rem;
+      font-size: 1.2rem;
+  }
