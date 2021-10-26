@@ -16,7 +16,7 @@ const ItemDetail = ({ item }) => {
 
   const onAdd = (qty) => {
     addItem({item: item, cantidad: qty});
-    alert(`Has agreegado al carrito ${qty} cursos de ${item.name}`);
+    alert(`Has agregado al carrito ${qty} cursos de ${item.name}`);
     setShow(true);
     setHide(false);
   };
@@ -31,10 +31,13 @@ const ItemDetail = ({ item }) => {
             <li>Precio:${item.price}</li>
             <li>Herramientas tecnológicas: {item.tools}</li>
           </ul>
+
           {
           hide ? <ItemCount stock={item.stock} onAdd={onAdd} initial={1}/>:null
           }
-          
+          {
+          show ? <button className="custom-btn btn-5"><Link to={'/cursos'} className="link"><span>Seguir Comprando</span></Link></button>:null
+          }
           {
           show ? <button className="custom-btn btn-5"><Link to={'/cart'} className="link"><span>Finalizar Compra</span></Link></button>:null
           }

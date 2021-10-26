@@ -6,7 +6,7 @@ export const productList = [
       name: 'Curso de Producción Músical Inicial',
       price: 5000,
       thumbnail:
-        'https://www.blackstaramps.com/img/ranges/live-logic/ableton-live-lite-preview-1.jpg',
+        'https://media.djmania.net/guias/ableton/3.png',
       stock: 100,
       description:
       'El curso incluye 4 videos de dos horas en los que podrás aprender las bases del manejo de Ableton, aplicando conceptos de teoría musical como armonía, rítmica y melodía.',

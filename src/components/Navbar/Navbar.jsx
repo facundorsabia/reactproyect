@@ -22,7 +22,7 @@ function NavBar(){
                 </NavDropdown>
                 <Nav.Link><Link to={'/blog'} className="link">Blog</Link></Nav.Link>
                 <Nav.Link><Link to={'/contacto'} className="link">Contacto</Link></Nav.Link>
-                <Nav.Link><CartWidget/></Nav.Link>
+                <Nav.Link><Link to={'/cart'} className="link"><CartWidget/></Link></Nav.Link>
             </Nav>
             </Navbar.Collapse>
         </Container>

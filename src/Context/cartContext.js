@@ -12,8 +12,14 @@ function CartContextProvider ({children}){
         setCartList([...cartList, item]);
     }
 
-    function clear() {
+    function clearCart() {
         setCartList([])
+    }
+
+    function clearItem(id){
+        let index = cartList.findIndex((item)=> item.id === id);
+        cartList.splice(index,1);
+        setCartList([...cartList])
     }
 
     console.log(cartList);
@@ -22,7 +28,8 @@ function CartContextProvider ({children}){
         <CartContext.Provider value={{
             cartList,
             addItem,
-            clear
+            clearCart,
+            clearItem
         }}>
             {children}
         </CartContext.Provider>
