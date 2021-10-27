@@ -6,30 +6,29 @@ import {useState, createContext, useContext } from "react";
 
 function CartContextProvider ({children}){
 
-    const [cartList, setCartList ] = useState ([]);
+    // CART CONTEXT //
+    const [cart, setCart ] = useState ([]);
 
     const addItem = (item) =>{
-        setCartList([...cartList, item]);
+        setCart([...cart, item]);
     }
 
-    function clearCart() {
-        setCartList([])
-    }
+    const clearCart = () => setCart([]);
+
 
     function clearItem(id){
-        let index = cartList.findIndex((item)=> item.id === id);
-        cartList.splice(index,1);
-        setCartList([...cartList])
+        let index = cart.findIndex((item)=> item.item.id === id);
+        cart.splice(index,1);
+        setCart([...cart])
     }
 
-    console.log(cartList);
 
     return(
         <CartContext.Provider value={{
-            cartList,
+            cart,
             addItem,
             clearCart,
-            clearItem
+            clearItem,
         }}>
             {children}
         </CartContext.Provider>

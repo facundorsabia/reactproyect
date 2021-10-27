@@ -9,6 +9,10 @@
     background-image: url(../../images/musicProduction.jpeg);
   }
 
+  .cartCard{
+    background-color: rgba(0, 0, 0, 0.612);
+  }
+
   .productCart{
       color: white;
       margin: 4rem;

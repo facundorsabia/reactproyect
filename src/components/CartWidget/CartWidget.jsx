@@ -4,9 +4,10 @@ import { useCartContext } from '../../Context/cartContext';
 
 const CartWidget = () => {
 
-    const {cartList, clear} = useCartContext();
-    var totalItems = (cartList.length);
+    const {cart} = useCartContext();
+    var totalItems = (cart.length);
 
+    console.log(cart.lenght)
     
     return(
         <div className="cart-widget">

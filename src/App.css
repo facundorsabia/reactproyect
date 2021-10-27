@@ -3,13 +3,11 @@
 
 /*GENERAL Styles*/
 
-h1{
+h1, h2, h3, h4, p {
     font-family: 'Rajdhani', sans-serif;
-}
-
-h2{
     color: white;
 }
+
 
 .link{
     text-decoration: none;
