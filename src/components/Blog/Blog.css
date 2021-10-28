@@ -8,3 +8,11 @@
   .blogSlide {
     background-image: url(../../images/musicProduction.jpeg);
   }
+
+.card{
+  margin: 3rem;
+}
+
+.cardText{
+  color: black;
+  }
