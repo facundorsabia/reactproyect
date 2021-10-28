@@ -7,19 +7,38 @@ import { useCartContext } from '../../Context/cartContext';
 
 const ItemDetail = ({ item }) => {
 
-  const {cartList, addItem} = useCartContext();
-  console.log(cartList);
-
-  const [show, setShow] = useState (false);
-
-  const [hide, setHide] = useState (true);
+  const {cart, addItem, addCart} = useCartContext();
+ 
 
   const onAdd = (qty) => {
+    if (cart.length === 0) {
     addItem({item: item, cantidad: qty});
+    addCart(qty);
     alert(`Has agregado al carrito ${qty} cursos de ${item.name}`);
     setShow(true);
     setHide(false);
+    } else  {
+      let idDouble = cart.find(item => item.item.id === item.id)
+      if (idDouble) {
+        alert (`Ud agrego ${qty} unidades al carrito`);
+        addCart(qty);
+        idDouble.cantidad = idDouble.cantidad+qty;
+        setShow(true);
+        setHide(false);
+      } else {
+        alert (`Ud agrego ${qty} unidades al carrito`);
+        addCart(qty);
+        setShow(true);
+        setHide(false);
+        addItem({item: item, cantidad: qty})
+      }
+    }
   };
+
+    //mostrar y ocultar botones
+    const [show, setShow] = useState (false);
+
+    const [hide, setHide] = useState (true);
 
   return (
       <article className="product-detail">

@@ -3,10 +3,24 @@ import React, {useState} from 'react';
 import { useCartContext } from '../../Context/cartContext';
 import {Link} from 'react-router-dom';
 
-const Cart = (id) => {
+const Cart = () => {
 
 
     const {cart, clearCart, clearItem} = useCartContext();
+
+      
+  const pxq = (a,b) => {
+    return a*b
+  }
+  let total = 0;
+
+  const totalPxQ = (a, b) => {
+    let sum = a*b;
+    total = total + sum;
+    return total
+  }
+  
+  total = cart.map((item=> (totalPxQ(item.cantidad,item.item.price))))
 
     //Variable verdadera cuando el carrito está vacío o falsa cuando tiene algun producto dentro
     let cartMessage = true;
@@ -37,10 +51,11 @@ const Cart = (id) => {
                         <li  key={item.item.id}>
                         Nombre: {item.item.name} <br></br>
                         Cantidad: {item.cantidad}  <br></br> 
-                        Precio: $ {item.item.price * item.cantidad}  <br></br> 
-                        <button onClick={()=>clearItem(id)}> Eliminar del carrito </button></li>)}
+                        Precio: $ {item.item.price}  <br></br> 
+                        Total: $ {pxq(item.cantidad,item.item.price)} <br></br> 
+                        <button onClick={()=>clearItem(item.item.id)}> Eliminar del carrito </button></li>)}
                     </ul>
-                    <h3>Total: $ </h3>
+                    <h3>Total Carrito: $ {total[total.length-1]} </h3>
                     <button className="custom-btn btn-5" onClick={()=>clearCart()}><span>Resetear Carrito</span></button>
                     <button className="custom-btn btn-5" onClick={()=>finishBuy()}><span>Finalizar Compra</span></button>
                 </div> 

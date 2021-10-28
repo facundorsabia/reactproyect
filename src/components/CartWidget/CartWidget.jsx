@@ -4,15 +4,12 @@ import { useCartContext } from '../../Context/cartContext';
 
 const CartWidget = () => {
 
-    const {cart} = useCartContext();
-    var totalItems = (cart.length);
-
-    console.log(cart.lenght)
+    const {qBuy} = useCartContext();
     
     return(
         <div className="cart-widget">
             <TiShoppingCart size={30} color="white"/>
-            <div className="qty-display">{totalItems}</div>
+            <div className="qty-display">{qBuy}</div>
         </div>
     );
 }
