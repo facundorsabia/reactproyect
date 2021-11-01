@@ -1,20 +1,22 @@
-import React, { useEffect} from 'react';
+import React, { useEffect, useParams, useState} from 'react';
 import './ItemListContainer.css'
 import ItemList from './ItemList'
 import { getFirestore } from '../../services/getFirebase';
 
 
 const ItemListContainer = () => {
+const[items, setItems] = useState([]);
+const {category } = useParams()
 
-//    useEffect(() => {
-//        db.collection('cursos').get() //toda la coleccion
-//        .then (resp => console.log(resp))
+useEffect(() => {
+        const db = getFirestore();
+        db.collection('cursos').get() //toda la coleccion
+        .then (resp => setItems(resp.docs.map(it =>({id:it.id,...it.data()}) )))
  //       db.collection('cursos').doc('eEqv8rkdlGfu6JPN7Nhu').get() //toda la coleccion
  //       .then (resp => console.log(resp))
- //   }, []);
+}, [category]);
 
-const db = getFirestore();
-console.log("test");
+console.log(items)
 
     return(
         <section className="cursos cursosSlide">
