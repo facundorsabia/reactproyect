@@ -1,5 +1,5 @@
 import './Cart.css';
-import React, {useState} from 'react';
+import React from 'react';
 import { useCartContext } from '../../Context/cartContext';
 import {Link} from 'react-router-dom';
 
@@ -9,18 +9,19 @@ const Cart = () => {
     const {cart, clearCart, clearItem} = useCartContext();
 
       
-  const pxq = (a,b) => {
-    return a*b
-  }
-  let total = 0;
+    const pxq = (a,b) => {
+        return a*b
+    }
 
-  const totalPxQ = (a, b) => {
-    let sum = a*b;
-    total = total + sum;
-    return total
-  }
+    let total = 0;
+
+    const totalPxQ = (a, b) => {
+        let sum = a*b;
+        total = total + sum;
+        return total
+    }
   
-  total = cart.map((item=> (totalPxQ(item.cantidad,item.item.price))))
+    total = cart.map((item=> (totalPxQ(item.cantidad,item.item.price))))
 
     //Variable verdadera cuando el carrito está vacío o falsa cuando tiene algun producto dentro
     let cartMessage = true;

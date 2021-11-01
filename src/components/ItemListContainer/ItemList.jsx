@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Item from '../Item/Item';
 import { getAllProductsFromDB } from '../../helpers/getData';
-
 import './ItemList.css';
+
+
 
 const ItemList = () => {
 
   const [products, setProducts] = useState([]);
-
 
   useEffect(() => {
     getAllProductsFromDB(setProducts);
