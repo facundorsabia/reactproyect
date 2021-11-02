@@ -43,7 +43,7 @@ const Cart = () => {
                 cartMessage ? 
                 <div className="message">
                     <h2>No has agregado ningún curso al carrito</h2>
-                    <button className="custom-btn btn-5"><Link to={'/cursos'} className="link"><span>Agregar Cursos</span></Link></button>
+                    <button className="custom-btn btn-5"><Link to={'/'} className="link"><span>Agregar Cursos</span></Link></button>
                 </div>
                 :            
                 <div>    

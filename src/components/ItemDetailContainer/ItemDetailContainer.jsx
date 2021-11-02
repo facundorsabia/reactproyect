@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { getProductById } from '../../helpers/getData.js';
 import ItemDetail from '../ItemDetail/ItemDetail.jsx';
 import './ItemDetailContainer.css';
 import { getFirestore } from '../../services/getFirebase';

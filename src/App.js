@@ -22,7 +22,7 @@ function App() {
             <Route exact path="/">
               <Home title={'Cursos de producción musical'} />
             </Route>
-            <Route exact path="/cursos">
+            <Route exact path="/categorias/:categorias">
               <ItemListContainer/>
             </Route>
             <Route exact path="/cursos/:id">

@@ -46,6 +46,7 @@ const ItemDetail = ({ item }) => {
         <div className="product-detail__info">
           <h2 className="name">{item.name}</h2>
           <p className="description">{item.description}</p>
+          <p className="description">categoría: {item.category}</p>
           <ul className="info-grid">
             <li>Precio:${item.price}</li>
             <li>Herramientas tecnológicas: {item.tools}</li>
@@ -55,7 +56,7 @@ const ItemDetail = ({ item }) => {
           hide ? <ItemCount stock={item.stock} onAdd={onAdd} initial={1}/>:null
           }
           {
-          show ? <button className="custom-btn btn-5"><Link to={'/cursos'} className="link"><span>Seguir Comprando</span></Link></button>:null
+          show ? <button className="custom-btn btn-5"><Link to={'/'} className="link"><span>Seguir Comprando</span></Link></button>:null
           }
           {
           show ? <button className="custom-btn btn-5"><Link to={'/cart'} className="link"><span>Finalizar Compra</span></Link></button>:null

@@ -17,8 +17,8 @@ function NavBar(){
             <Nav className="me-auto">
                 <Nav.Link className="nav_item"><Link to={'/'} className="link">Inicio</Link></Nav.Link>
                 <NavDropdown title="Cursos" id="basic-nav-dropdown">
-                <NavDropdown.Item><Link to={'/cursos'} className="linkDrop">Producción Musical</Link></NavDropdown.Item>
-                <NavDropdown.Item>DisckJockey</NavDropdown.Item>
+                <NavDropdown.Item><Link to={'/categorias/produccion'} className="linkDrop">Producción Musical</Link></NavDropdown.Item>
+                <NavDropdown.Item><Link to={'/categorias/mezcla'} className="linkDrop">Mezcla y Mastering</Link></NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link><Link to={'/blog'} className="link">Blog</Link></Nav.Link>
                 <Nav.Link><Link to={'/contacto'} className="link">Contacto</Link></Nav.Link>

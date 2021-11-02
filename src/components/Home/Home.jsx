@@ -12,7 +12,6 @@ const Home = ({title}) => {
             <p>
             Aprende a producir música desde cero. Vas a poder crear tus propias canciones, mezclarlas, masterizarlas y editarlas.
             </p>
-            <Button variant="dark"><Link to={'/cursos'} className="link">+ INFO</Link></Button>{' '}
           </article>
         </div>
       </section>
