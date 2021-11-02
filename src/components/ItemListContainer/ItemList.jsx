@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Item from '../Item/Item';
 import { getAllProductsFromDB } from '../../helpers/getData';
 import './ItemList.css';
+import { getFirestore } from '../../services/getFirebase';
 
 
 
@@ -10,7 +11,9 @@ const ItemList = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    getAllProductsFromDB(setProducts);
+    const db = getFirestore();
+    db.collection('cursos').get()
+    .then(resp => setProducts(resp.docs.map(it => ({id: it.id, ...it.data() }))))
   }, []);
 
   return (
