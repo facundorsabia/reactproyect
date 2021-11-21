@@ -1,9 +1,14 @@
 import './Cart.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { useCartContext } from '../../Context/cartContext';
 import {Link} from 'react-router-dom';
-import firebase from 'firebase';
+import Button from 'react-bootstrap/Button';
+import firebase from 'firebase/app';
+import Swal from 'sweetalert2';
 import { getFirestore } from '../../services/getFirebase';
+import CartForm from './CartForm';
+import { CartX } from 'react-bootstrap-icons';
+
 
 const Cart = () => {
 
@@ -15,7 +20,9 @@ const Cart = () => {
         return a*b
     }
 
-    const finishBuy = () => {
+    const [dataForm, setDataForm] = useState({});
+
+    const finishBuy = (dataForm) => {
         let order = {};
         order.date = firebase.firestore.Timestamp.fromDate(new Date());
         order.buyer = {name: 'Facundo Rodriguez', email:'palufarosa@hotmailcom.ar', phone: 1567431598, payment:'card'};
@@ -34,19 +41,21 @@ const Cart = () => {
         const orderReady = dbOrder.collection('orders')
         orderReady.add(order)
         .then((IdDocumento)=>{
-          setTimeout(alert(`Su número de orden es ${IdDocumento.id} y esta siendo procesada`), 3000)
+          Swal.fire({
+            icon: 'info',
+            title: `Su orden ${IdDocumento.id} fue procesada correctamente, en breve recibirá un mail con los datos de facturación`,
+            showConfirmButton: false,
+            timer: 3000
+          })
         })
         .catch(error => {
           console.log(error)
         })
         .finally(()=>{
-          alert(`Su compra se ha realizado con éxito, en breve recibirá una confirmación y recibo por email.`)
+          clearCart();
         })
         
 
-       clearCart();
-
-       
     const updateItems = dbOrder.collection('cursos').where(firebase.firestore.FieldPath.documentId(), 'in', cart.map(i => i.item.id));
 
     const batch = dbOrder.batch();
@@ -76,8 +85,8 @@ const Cart = () => {
 
     return(
         <section className="cart cartSlide"> 
-             <div className="hero-container cartCard">
-                 <h1>Cursos Adquiridos</h1>
+            <div className="hero-container cartCard">
+                <h1>Cursos Adquiridos</h1>
                 {
                 cartMessage ? 
                 <div className="message">
@@ -93,11 +102,11 @@ const Cart = () => {
                         Cantidad: {item.cantidad}  <br></br> 
                         Precio: $ {item.item.price}  <br></br> 
                         Total: $ {pxq(item.cantidad,item.item.price)} <br></br> 
-                        <button onClick={()=>clearItem(item.item.id)}> Eliminar del carrito </button></li>)}
+                        <Button variant="danger" onClick={()=>clearItem(item.item.id)}> <CartX size={18} />  </Button></li>)}
                     </ul>
-                    <h3>Total Carrito: $ {totalPxQ()} </h3>
-                    <button className="custom-btn btn-5" onClick={()=>clearCart()}><span>Resetear Carrito</span></button>
-                    <button className="custom-btn btn-5" onClick={()=>finishBuy()}><span>Finalizar Compra</span></button>
+                    <div className="cartForm">
+                      <CartForm finishBuy={finishBuy} clearCart={clearCart} setDataForm={setDataForm} dataForm={dataForm}/>
+                  </div>
                 </div> 
                 }
             </div>

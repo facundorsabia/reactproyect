@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './Home.css'
-import Button from 'react-bootstrap/Button'
 
 const Home = ({title}) => {
     return (
@@ -12,6 +11,8 @@ const Home = ({title}) => {
             <p>
             Aprende a producir música desde cero. Vas a poder crear tus propias canciones, mezclarlas, masterizarlas y editarlas.
             </p>
+            <button className="custom-btn btn-5"><Link to={'/categorias/produccion'} className="link"><span>Produccion Musical</span></Link></button>
+            <button className="custom-btn btn-5"><Link to={'/categorias/mezcla'} className="link"><span>Mezcla y Master</span></Link></button>
           </article>
         </div>
       </section>
