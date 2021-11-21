@@ -3,7 +3,7 @@ import ItemCount from '../Item/ItemCount';
 import {Link} from 'react-router-dom';
 import './ItemDetail.css';
 import { useCartContext } from '../../Context/cartContext';
-
+import Swal from 'sweetalert2';
 
 const ItemDetail = ({ item }) => {
 
@@ -14,19 +14,34 @@ const ItemDetail = ({ item }) => {
     if (cart.length === 0) {
     addItem({item: item, cantidad: qty});
     addCart(qty);
-    alert(`Has agregado al carrito ${qty} cursos de ${item.name}`);
+    Swal.fire({
+      icon: 'info',
+      title: `Has agregado al carrito ${qty} cursos de ${item.name}`,
+      showConfirmButton: false,
+      timer: 3000
+    })
     setShow(true);
     setHide(false);
     } else  {
       let idDouble = cart.find(item => item.item.id === item.id)
       if (idDouble) {
-        alert (`Ud agrego ${qty} unidades al carrito`);
+        Swal.fire({
+          icon: 'info',
+          title: `Has agregado al carrito ${qty} cursos de ${item.name}`,
+          showConfirmButton: false,
+          timer: 3000
+        })
         addCart(qty);
         idDouble.cantidad = idDouble.cantidad+qty;
         setShow(true);
         setHide(false);
       } else {
-        alert (`Ud agrego ${qty} unidades al carrito`);
+        Swal.fire({
+          icon: 'info',
+          title: `Has agregado al carrito ${qty} cursos de ${item.name}`,
+          showConfirmButton: false,
+          timer: 3000
+        })
         addCart(qty);
         setShow(true);
         setHide(false);

@@ -1,11 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import ItemList from '../ItemListContainer/ItemList';
 import './Home.css'
+
 
 const Home = ({title}) => {
     return (
         <section className="hero hero-slide-1">
-        <div className="hero-container">
+
           <article className="hero-container__text-box">
             <h1>{title}</h1>
             <p>
@@ -14,7 +16,8 @@ const Home = ({title}) => {
             <button className="custom-btn btn-5"><Link to={'/categorias/produccion'} className="link"><span>Produccion Musical</span></Link></button>
             <button className="custom-btn btn-5"><Link to={'/categorias/mezcla'} className="link"><span>Mezcla y Master</span></Link></button>
           </article>
-        </div>
+
+        <ItemList/>
       </section>
 
     );

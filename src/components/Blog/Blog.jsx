@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card'
 const Blog = () => {
     return (
         <section className="blog blogSlide">
+            <h1>Artículos sobre producción musical</h1>
             <CardGroup>
             <Card className="card">
                 <Card.Img variant="top" src="https://iconcollective.edu/wp-content/uploads/Kick-and-Bass-Mixing-Tips.jpg" />
@@ -32,7 +33,7 @@ const Blog = () => {
                 </Card.Footer>
             </Card>
             <Card className="card">
-                <Card.Img variant="top" src="https://lh3.googleusercontent.com/proxy/x1uASJ4EG8mVtBaDBd1hfQBddXlWaheDKGAWsZPUKtsQ8NFXgqlPOiTMkNC0zw7Lvx_iz13BrUwU8WJ2ugHJ_yz0V7fcMZT16VUYeuKwf7RBxVxtDyjQi3YSWy-AjgwAo7WodLjnG0MCZN9JmczJirN6EYlYC6khesmu6971zk2u5kuVylct" />
+                <Card.Img variant="top" src="https://lh3.googleusercontent.com/proxy/3g4eS9apuGhCXhcOshHIwSMjjl7gkt_hKA8AQY872ldtpW3nxxQGog3l4NGcglPnlN0E2rXg_IXDxTbjqMfsKUoiuVo5_TedERfDncoK8xqkusFirf7lQoqDWnv6YDglnideq0JKQOt1vZ3hHiHVppha8ht6tMJn_xc8vFYCjUzFsLTqfYad" />
                 <Card.Body>
                 <Card.Title>Imágen Stereo</Card.Title>
                 <Card.Text className="cardText">

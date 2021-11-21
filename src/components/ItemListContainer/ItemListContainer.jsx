@@ -7,8 +7,9 @@ const ItemListContainer = () => {
 
     return(
         <section className="cursos cursosSlide">
+            <h1>Cursos Disponibles</h1>
             <ItemList />
-         </section>
+        </section>
     );
 }
 

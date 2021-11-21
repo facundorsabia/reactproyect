@@ -2,12 +2,12 @@ import './Cart.css';
 import React, { useState } from 'react';
 import { useCartContext } from '../../Context/cartContext';
 import {Link} from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
 import firebase from 'firebase/app';
 import Swal from 'sweetalert2';
 import { getFirestore } from '../../services/getFirebase';
 import CartForm from './CartForm';
 import { CartX } from 'react-bootstrap-icons';
+import { Button, Table } from 'react-bootstrap';
 
 
 const Cart = () => {
@@ -95,15 +95,32 @@ const Cart = () => {
                 </div>
                 :            
                 <div>    
-                    <ul className="productCart">
-                        {cart.map(item =>
-                        <li  key={item.item.id}>
-                        Nombre: {item.item.name} <br></br>
-                        Cantidad: {item.cantidad}  <br></br> 
-                        Precio: $ {item.item.price}  <br></br> 
-                        Total: $ {pxq(item.cantidad,item.item.price)} <br></br> 
-                        <Button variant="danger" onClick={()=>clearItem(item.item.id)}> <CartX size={18} />  </Button></li>)}
-                    </ul>
+                    <Table className="productCart">
+                    <thead>
+                      <tr>
+                        <th>Cantidad</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {cart.map((item => (
+            <tr key={item.item.id}>
+              <td>{item.cantidad}</td>
+              <td>{item.item.name}</td>
+              <td>{item.item.price}</td>
+              <td>{pxq(item.cantidad, item.item.price)}</td>
+              <td><Button variant="danger" onClick={() => clearItem(item.item.id)}> <CartX size={18} /> </Button></td>
+            </tr>
+          ))) }
+          <tr>
+            <td colSpan="3">TOTAL</td>
+            <td colSpan="2">$ {totalPxQ()}</td>
+          </tr>
+        </tbody>
+                    </Table>
                     <div className="cartForm">
                       <CartForm finishBuy={finishBuy} clearCart={clearCart} setDataForm={setDataForm} dataForm={dataForm}/>
                   </div>
